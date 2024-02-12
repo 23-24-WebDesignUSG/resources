@@ -1,0 +1,33 @@
+h1 {
+	color: forestgreen;
+	border: 10px solid;
+}
+
+h1:hover {
+	background-color: dimgrey;
+	color: white;
+}
+
+p {
+	font-size: 16px;
+}
+
+.hidden {
+	display: none;
+	position: absolute;
+}
+
+.info {
+	position: relative;
+}
+
+.info:hover .hidden {
+	display: block;
+}
+
+
+
+
+
+
+
