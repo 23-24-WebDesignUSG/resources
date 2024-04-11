@@ -1,0 +1,36 @@
+.flower1 {
+	opacity: 50%;
+	display: inline-block;
+	border: black 4px solid;
+	transition: opacity 2s, border 2s;
+}
+
+.flower1:hover {
+	opacity: 100%;
+	border: white;
+}
+
+.flower2 {
+	background-image: url("dahlia1.JPG");
+	display: inline-block;
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+
+@keyframes dahlia {
+	0% {left: 0px; top: 0px;}
+	25% {left: 100px; top: 100px;}
+	100% {background-image: url("dahlia2.JPG");}
+}
+
+.flower2:hover {
+
+	animation-name: dahlia;
+	animation-duration: 5s;
+
+}
+
+
+
+
