@@ -65,6 +65,10 @@
 
 		var image = "";
 
+		// if statements allow for different code to happen depending on a condition
+		// if the food variable is equal to a certain food, then the image changes
+		// to the corresponding correct image!
+		// "==" represents "is equal to"? as a condition
 		if (food == "chicken and rice") {
 			image = "chickenRice.jpeg";
 		}
@@ -77,6 +81,8 @@
 			image = "tomato.jpeg";
 		}
 
+		// element attributes can be changed. In this case, the img src attribute
+		// changes the image that appears on the webpage
 		document.getElementById("foodIm").src = image;
 	}
 
