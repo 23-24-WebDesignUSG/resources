@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Jvascript Notes </title>
+</head>
+
+<body>
+
+	<h1>
+		Welcome to a Javascript webpage!
+	</h1>
+
+	<!-- Button element has an attribute to CALL a Javascript function -->
+	<button type="button" onclick="showVariable()">
+		SHOW MY VARIABLE
+	</button>
+
+	<br>
+	<br>
+	<!-- Elements need the id attribute to be accessed by javascript -->
+	<p>
+		My favorite food is <span id="foodChoice">tacos</span>!
+	</p>
+
+	<button type="button" onclick='changeFood("chicken and rice")'>
+		I prefer chicken and rice
+	</button>
+	<button type="button" onclick='changeFood("oranges")'>
+		I prefer oranges
+	</button>
+	<button type="button" onclick='changeFood("tomatoes")'>
+		I prefer tomatoes
+	</button>
+
+</body>
+
+<script type="text/javascript">
+	
+	// the function defined only runs when it is "called"
+	function showVariable() {
+		// create variables which store data (var, let, const)
+		var x = 5;
+
+		// syntax for javascript ends statements with a ";"
+		x = x + 2;
+
+		// function calls are in blue and require parantheses "(" ")" for any parameters
+		alert("Your variable is " + x);
+	}
+
+	function changeFood(f) {
+
+		var food = f;
+
+		document.getElementById("foodChoice").innerHTML = food;
+
+	}
+
+	// calling the function!
+	// showVariable();
+
+</script>
+
+</html>
