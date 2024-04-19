@@ -24,6 +24,13 @@
 		My favorite food is <span id="foodChoice">tacos</span>!
 	</p>
 
+	<!-- div styles can be edited with javascript
+	<div id="foodImage" style="background-image: url('tacos.jpeg'); height: 400px; width: 400px;">
+	</div>  -->
+
+	<img id="foodIm" src="tacos.jpeg">
+
+
 	<button type="button" onclick='changeFood("chicken and rice")'>
 		I prefer chicken and rice
 	</button>
@@ -56,6 +63,21 @@
 
 		document.getElementById("foodChoice").innerHTML = food;
 
+		var image = "";
+
+		if (food == "chicken and rice") {
+			image = "chickenRice.jpeg";
+		}
+
+		if (food == "oranges") {
+			image = "orange.jpeg";
+		}
+
+		if (food == "tomatoes") {
+			image = "tomato.jpeg";
+		}
+
+		document.getElementById("foodIm").src = image;
 	}
 
 	// calling the function!
