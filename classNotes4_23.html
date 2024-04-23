@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Notes on the FORM element</title>
+</head>
+
+<body>
+
+	<form>
+		<!-- All of the content within the form is an input to select -->
+		<label for="student"> Enter your name: </label>
+		<input id="username" type="text" name="student">
+
+		<!-- input button needs a value = text to be displayed on it -->
+		<input type="button" name="submit" onclick="getName()" value="SUBMIT">
+
+		<br>
+		<br>
+
+		<!-- multiple inputs can be used to get more data -->
+		<label for="xVal"> Enter a number: </label>
+		<input id="xNum" type="text" name="xVal">
+
+		<br>
+
+		<label for="yVal"> Enter a number: </label>
+		<input id="yNum" type="text" name="yVal">
+
+	</form>
+
+	<p id="results">
+
+	</p>
+
+</body>
+
+
+<script type="text/javascript">
+	
+	function getName() {
+		var name = document.getElementById("username").value;
+		document.getElementById("results").innerHTML = "Hello " + name + "!";
+
+		// if statements allow for a condition to be checked
+		// and different javascript code can run depending on that condition
+
+		var x = parseInt( document.getElementById("xNum").value );
+		var y = parseInt(document.getElementById("yNum").value);
+
+		if (x > y) {
+			alert("First number was bigger!");
+		}
+
+		if (x < y) {
+			alert("Second number was bigger");
+		}
+
+		if (x == y) {
+			alert("Both numbers are the same!");
+		}
+
+	}
+
+
+
+</script>
+
+
+</html>
+
