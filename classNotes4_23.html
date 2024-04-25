@@ -28,6 +28,39 @@
 		<label for="yVal"> Enter a number: </label>
 		<input id="yNum" type="text" name="yVal">
 
+		<br>
+		<br>
+
+		<!-- Radio inputs need to have the same name to be a part of the same
+			set of answers -->
+
+		<label for="option1"> <img src="rhodo1.jpeg"> </label>
+		<input id="option1" type="radio" name="question1">
+
+		<label for="option2"> Summer </label>
+		<input id="option2" type="radio" name="question1">
+
+		<label for="option3"> Fall </label>
+		<input id="option3" type="radio" name="question1">
+
+		<label for="option4"> Winter </label>
+		<input id="option4" type="radio" name="question1">
+
+		<br>
+		<!-- checkbox inputs don't need to be a part of the same set. All of
+			them can either be True or False. No limitation -->
+		<label for="check1"> Math </label>
+		<input id="check1" type="checkbox" name="question2">
+
+		<label for="check2"> English </label>
+		<input id="check2" type="checkbox" name="question2">
+
+		<label for="check3"> Science </label>
+		<input id="check3" type="checkbox" name="question2">
+
+		<label for="check4"> History </label>
+		<input id="check4" type="checkbox" name="question2">
+
 	</form>
 
 	<p id="results">
@@ -46,8 +79,52 @@
 		// if statements allow for a condition to be checked
 		// and different javascript code can run depending on that condition
 
+		// parseInt() is necessary to change the text input into numerical
+		// data which can be compared
 		var x = parseInt( document.getElementById("xNum").value );
 		var y = parseInt(document.getElementById("yNum").value);
+
+		// check the radio inputs
+		// For radio and checkbox inputs, the "value" is 'checked'
+
+		var points = 0
+
+		var spring = document.getElementById("option1").checked;
+
+		if (spring) {
+			points = points + 5;
+		}
+
+		var summer = document.getElementById("option2").checked;
+
+		if (summer) {
+			points = points + 10;
+		}
+
+		var fall = document.getElementById("option3").checked;
+
+		if (fall) {
+			points = points + 1;
+		}
+
+		var winter = document.getElementById("option4").checked;
+
+		if (winter) {
+			points = points - 2;
+		}
+
+		// Use the variable to determine what to output
+
+		if (points > 8) {
+			alert("You have a fun personality!");
+		}
+
+		if (points < 0) {
+			alert("Why do you enjoy the cold?");
+		}
+
+
+
 
 		if (x > y) {
 			alert("First number was bigger!");
