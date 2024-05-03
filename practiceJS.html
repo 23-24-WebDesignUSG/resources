@@ -1,0 +1,59 @@
+
+<html>
+
+<body>
+	<label for="inp"> Type your graduation year </label>
+	<input type="text" name="inp" id="inp">
+
+	<button onclick="question1()"> sample </button>
+
+</body>
+
+<script type="text/javascript">
+	
+	function question1() {
+
+		let year = document.getElementById("inp").value;
+		let remainder = year % 4;
+
+		if (remainder == 0) {
+			alert("You are a blue tie!");
+		}
+
+		if (remainder == 1) {
+			alert("You are a yellow tie!");
+		}
+
+		if (remainder == 2) {
+			alert("You are a red tie!");
+		}
+
+		if (remainder == 3) {
+			alert("You are a green tie!");
+		}
+
+	}
+
+
+
+	function names() {
+
+		let s = document.getElementById("inp").value;
+
+		if (s == "Melody") {
+			alert("Hello!");
+		}
+
+		else if (s == "Nora") {
+			alert("Hi!");
+		}
+
+		else {
+			alert("Good day!");
+		}
+
+	}
+
+</script>
+
+</html>
