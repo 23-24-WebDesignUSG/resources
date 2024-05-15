@@ -1,0 +1,104 @@
+<html>
+<body>
+	<label for="inp"> Input: </label>
+	<input type="text" name="inp" id="inp">
+	<button onclick="testScript()"> Talk To Cat </button>
+	<button onclick="feedCat()"> Feed The Cat </button>
+	<p id="output"></p>
+
+</body>
+
+<script type="text/javascript">
+
+
+	// an array is a collection of one type of data
+
+	const names = ["Nora", "Melody", "Tiane"];
+
+	// access individual elements of the array by their position
+	// access name at position 1
+	alert(names[1]);
+
+	// access first element in array
+	alert(names[0]);
+
+	// access last element in array
+	alert(names[2]);
+
+	// arrays have length = the number of elements in the array
+	alert(names.length);
+
+
+	const cat = { 
+		name : "Daisy", 
+		age : 4, 
+		hungry : true,
+		breed : "American shorthair",
+		speak : function() {
+			if (this.hungry) {
+				alert("Meow!");
+			}
+			else {
+				alert("The cat is napping");
+			}
+		},
+		eatsFood : function() {
+			this.hungry = false;
+		}
+	}
+
+
+	function feedCat() {
+
+		if (cat.hungry) {
+			cat.eatsFood();
+		document.getElementById("output").innerHTML = "You have fed the Cat!";
+		}
+		else {
+			document.getElementById('output').innerHTML = "You do not need to feed the Cat";
+		}
+
+		
+	}
+
+
+	function testScript() {
+		cat.speak();
+		document.getElementById("output").innerHTML = "The cat has spoken";
+
+		// Objects are collections of data. They have properties and can have functions (actions)
+
+		/*const cat = { 
+			name : "Daisy", 
+			age : 4, 
+			hungry : true,
+			breed : "American shorthair",
+			speak : function() {
+				if (this.hungry) {
+					alert("Meow!");
+				}
+				else {
+					alert("The cat is napping");
+				}
+			},
+			eatsFood : function() {
+				this.hungry = false;
+			}
+		}
+
+		// access properties of the cat object in order to use them or change them
+
+		cat.breed = "Maine coon";
+		alert(cat.breed);
+
+		// access (call) the functions of the cat object
+
+		cat.speak();
+		cat.eatsFood();
+		cat.speak();
+		*/
+
+	}
+
+</script>
+</html>

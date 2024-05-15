@@ -1,0 +1,81 @@
+<html>
+<body>
+
+	<h1> Welcome to the Basketball Stat Tracker </h1>
+
+
+	<label for="inp"> Input: </label>
+	<input type="text" name="inp" id="inp">
+	<button onclick="hitThree()"> Three Pointer! </button>
+	<button onclick="twoPointer()"> Jump Shot! </button>
+	<button onclick="freeT()"> Free Throw! </button>
+	<button onclick="missed()"> Missed Shot! </button>
+
+	<p><br>Click on the options below to recalibrate the stats</p>
+
+	<button onclick="showStat()"> Show Stats! </button>
+	<p>
+		<span id="nameOutput"> Name: </span>
+		<br>
+		<span id="3Output"> 3point % : </span>
+		<br>
+		<span id="2Output"> 2point % : </span>
+
+	</p>
+
+</body>
+
+<script type="text/javascript">
+
+
+	const tracker = { 
+		name : "",
+		height : "",
+		threes : 0,
+		twos : 0,
+		ft : 0,
+		missedShots : 0,
+		threePercent : 100,
+		twoPercent : 100,
+		calcPercent : function() {
+			this.threePercent = this.threes / (this.threes + this.missedShots);
+			this.twoPercent = this.twos / (this.twos + this.missedShots);
+		}
+	};
+
+	function hitThree() {
+		tracker.threes = tracker.threes + 1;
+	}
+
+	function twoPointer() {
+		tracker.twos = tracker.twos + 1;
+	}
+
+	function freeT() {
+		tracker.ft = tracker.ft + 1;
+	}
+
+	function missed() {
+		tracker.missedShots = tracker.missedShots + 1;
+	}
+
+	function showStat() {
+		tracker.calcPercent();
+
+		var n = document.getElementById("inp").value;
+		tracker.name = n;
+		var s = document.getElementById("nameOutput").innerHTML;
+		document.getElementById("nameOutput").innerHTML = s + n;
+
+		var th = document.getElementById("3Output").innerHTML;
+		var threeP = tracker.threePercent
+		document.getElementById("3Output").innerHTML = th + threeP;
+
+		var to = document.getElementById("2Output").innerHTML;
+		var twoP = tracker.twoPercent
+		document.getElementById("2Output").innerHTML = to + twoP;
+	}
+
+
+</script>
+</html>
